@@ -1,0 +1,23 @@
+<%- include("navbaronly"); -%>
+
+<title>
+    REFCON - New Message
+</title>
+
+<body>
+    <div class="container" style="margin-top: 30px;">
+
+        <form action="/markspace" method="POST">
+            <label class="label label-default">New Mark Space</label>
+            <input class="form-control" required type="text" name="internalNumber" placeholder="Internal Number">
+            <input class="form-control" required type="text" name="department" placeholder="Department">
+            <input class="form-control" required type="text" name="subjectCode" placeholder="Subject Code">
+            <input class="form-control" required type="text" name="subjectName" placeholder="Subject Name">
+            <input class="form-control" required type="text" name="year" placeholder="Year">
+            <input class="form-control" required type="text" name="semester" placeholder="Semester">
+            <button style="margin-top: 7px;" class="btn btn-primary" type="submit" name="button"> Create </button>
+        </form>
+
+    </div>
+
+</body>

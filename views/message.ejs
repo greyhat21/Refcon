@@ -1,0 +1,73 @@
+<%- include("navbaronly"); -%>
+
+<title>
+    REFCON - <%= questionTitle %>
+</title>
+
+<body >
+    <link rel="stylesheet" href="../css/studenteacherdiscussion.css">
+    <div class="container">
+        <% if(type === 'student'){ %>
+            <div style="font-size:30px; margin-top: 10px;">
+                <%= questionTitle %>
+            </div>
+
+            <div class="pxc-subcard" style="margin-top: 15px;">
+                <div style="font-size: large;" class="pxc-content">
+                    Question: 
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <%= question %>
+                </div>
+            </div>
+
+            <% if(answer === undefined){ %>
+                <div>
+                    No replies
+                </div>
+            <% } else{%>
+                <div class="pxc-subcard" style="font-size: large; background-color: lightgreen;">
+                    Answer:
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <%= answer %>
+                    <div class="text-right"><%= "Replied on " + repliedDate%></div>
+                </div>
+            <% } %>
+        <% } else if(type === 'teacher'){ %>
+
+            <div style="font-size:30px; margin-top: 10px;">
+                <%= questionTitle %>
+            </div>
+
+            <div class="pxc-subcard" style="margin-top: 15px;">
+                <div style="font-size: large;" class="pxc-content">
+                    Question: 
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <%= question %>
+                </div>
+            </div>
+
+            <% if(answer === undefined){ %>
+                <div>
+                    <form action="reply" method="POST">
+                        <textarea required placeholder="Enter you Answer Here" class="form-control" name="answer" rows="5" cols="30" style="margin-bottom: 10px;"></textarea>
+                        <button class="btn btn-primary" type="submit" name="button">Send Message</button>
+                        <input type="hidden" name="messageID" value= "<%= messageID %>" >
+                    </form>
+                </div>
+            <% } else{%>
+                <div class="pxc-subcard" style="font-size: large; background-color: lightgreen;">
+                    Your Answer:
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <%= answer %>
+                    <div class="text-right"><%= "Replied on " + repliedDate%></div>
+                </div>
+            <% } %>
+
+
+
+        <% } %>
+
+
+    </div>
+
+</body>

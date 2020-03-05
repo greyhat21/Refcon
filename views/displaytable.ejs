@@ -1,0 +1,45 @@
+<%- include("navbaronly"); -%>
+
+<title>
+    REFCON - Enter Marks
+</title>
+
+<script src="../js/internal.js"></script>
+<script src="../js/table.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../css/internal.css">
+
+<div class="container">
+    
+    <div class='main'>
+
+        <h6 style="margin-top: 40px;"> 
+            <%= department %> <%= year %> year, <%= subjectName %> Internal - <%= internalNumber %> Marks:
+        </h6>
+    
+        <table class="heavyTable" >
+    
+            <thead>
+    
+                <tr>
+                    <th>Roll Number</th>
+                    <th>Marks Obtained</th>
+
+                </tr>
+    
+            </thead>
+    
+            <tbody>
+                <% for(var i=0; i < rollNumbers.length; i++){ %>
+                <tr>
+                    <td><%= rollNumbers[i] %></td>
+                    <td><%=  %></td>
+                </tr>
+                <% } %>
+            </tbody>
+    
+        </table>
+    
+    </div>
+
+</div>
